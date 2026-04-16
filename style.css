@@ -1,0 +1,143 @@
+:root {
+    --deep-wine: #5E0B15;    /* Насичений винний */
+    --gold-accent: #D4AF37;  /* Золотистий акцент */
+    --soft-white: #F8F4F1;   /* М'який фон */
+    --dark-text: #2D0A0E;    /* Майже чорний винний */
+}
+
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    background-color: var(--soft-white);
+    color: var(--dark-text);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Шапка */
+.header {
+    background-color: var(--deep-wine);
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--gold-accent);
+}
+
+.logo {
+    color: white;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--gold-accent);
+    font-style: italic;
+}
+
+/* Стилізація табів */
+.tabs-container {
+    margin-top: 40px;
+}
+
+.tabs-header {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 25px;
+    border: 2px solid var(--deep-wine);
+    background: none;
+    color: var(--deep-wine);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: var(--deep-wine);
+    color: white;
+}
+
+/* Сітка контенту (Flex + Grid) */
+.grid-layout {
+    display: flex;
+    gap: 30px;
+}
+
+.main-content {
+    flex: 3;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid var(--gold-accent);
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Сайдбар */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-block {
+    background-color: var(--deep-wine);
+    color: white;
+    padding: 20px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Футер */
+footer a {
+    /* Используем ваш мягкий белый, чтобы текст был читаемым */
+    color: var(--soft-white); 
+    text-decoration: none;
+    margin: 0 10px;
+    opacity: 0.8; /* Слегка приглушаем в обычном состоянии */
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 1; /* Полная яркость при наведении */
+    color: #fff; /* Чистый белый или любой яркий акцентный цвет */
+    text-decoration: underline; /* Подчеркивание добавит "видимости" */
+}
+
+
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .grid-layout {
+        flex-direction: column;
+    }
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
